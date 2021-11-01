@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <title>Stripe Practice</title>
+        <meta name="description" content="Stripe Practice Project with Node. Single page, static landing page">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- STRIPE Elements Script -->
+        <script src="https://js.stripe.com/v3/"></script>
+        <link rel="stylesheet"  href="/styles.css">
+    </head>
+    <body>
+        <div class="center-div"><p>Product Selection.</p>
+
+        <div className="content-card centered ">
+        <div id="01" class="option center-div centered"><h4>Tier 1</h4></div>
+        <div class="center-div centered"><h4>Description</h4></div>
+    </div>
+    <div className="content-card centered ">
+        <div id="02" class="option center-div centered"><h4>Tier 2</h4></div>
+        <div class="center-div centered"><h4>Description..</h4></div>
+    </div>
+    <div className="content-card centered ">
+        <div id="03" class="option center-div centered"><h4>Tier 3</h4></div>
+        <div class="center-div centered"><h4>Description...</h4></div>
+    </div>
+    <form  method="post">
+       <input type="text" name="input1" />
+       <button id="submit-button" type="submit">Send</button>
+    </form>
+    <!-- Stripe Card Element -->
+    <form action="/charge" method="post" id="payment-form">
+        <div class="form-row">
+          <label for="card-element">
+            Credit or debit card
+          </label>
+          <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+          </div>
+      
+          <!-- Used to display Element errors. -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+      
+        <button>Submit Payment</button>
+      </form>
+</div>
+        
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="index.js"> </script>
+        
+    </body>
+</html>

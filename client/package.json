@@ -1,0 +1,16 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "follow-redirects": "^1.14.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "proxy":"http://localhost:4747",
+  "author": "cv",
+  "license": "ISC"
+}

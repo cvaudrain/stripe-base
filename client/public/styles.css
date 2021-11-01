@@ -1,0 +1,40 @@
+body{
+    background: cornflowerblue;
+}
+.center-div{
+    position:relative;
+    margin: 25px auto;
+    padding:5px;
+}
+.centered{
+    text-align: center;
+}
+.content-card{
+    background: #fff;
+   
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    /* padding: 10px; */
+    width: 25vw;
+    max-width: 450px;
+    margin:30px auto 20px auto;
+    text-align: center;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+
+  .card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: 1px solid white;
+    margin-bottom: 30px;
+    
+  }
+  .theGoodShading{
+    box-shadow: 1px 5px 12px black;
+    text-shadow: 0 1px 1px black;
+  }
+  .selected{
+      color:crimson;
+  }
