@@ -1,11 +1,11 @@
 require("dotenv").config()
 const express = require("express")
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
 const app = express()
 const cors = require("cors")
 const path = require("path") //utility for formatting url path delivery
 const PORT     = process.env.PORT || 4747;
-const DB       = "stripeDB";
+// const DB       = "stripeDB";
 const productList =  require("./products.js")
 const e = require("express")
 app.use(cors())
@@ -16,19 +16,19 @@ const stripe = require("stripe")(process.env.SECRET_KEY_TEST);
 // console.log(process.env.SECRET_KEY_TEST)
 //Middleware API Calls
 
-mongoose.connect("mongodb://localhost:27017/"+DB,{
-  //These options are deprecated and are the DEFAULT mongoose values as of 2021
-// useUnifiedTopology: true, 
-//    useNewUrlParser: true,
-//    useCreateIndex: true,
-//    useFindAndModify: false, 
-   connectTimeoutMS: 10000
-});
+// mongoose.connect("mongodb://localhost:27017/"+DB,{
+//   //These options are deprecated and are the DEFAULT mongoose values as of 2021
+// // useUnifiedTopology: true, 
+// //    useNewUrlParser: true,
+// //    useCreateIndex: true,
+// //    useFindAndModify: false, 
+//    connectTimeoutMS: 10000
+// });
 
-const db = mongoose.connection; //abbreviate mongoose.connection to variable for readability
- db.on("error",(error)=>{console.log(error)})
-// Event listeners
-db.once('open', () => console.log(`Connected to ${DB} database`));
+// const db = mongoose.connection; //abbreviate mongoose.connection to variable for readability
+//  db.on("error",(error)=>{console.log(error)})
+// // Event listeners
+// db.once('open', () => console.log(`Connected to ${DB} database`));
 
 //Stripe Charge
 // Token is created using Stripe Checkout or Elements!
@@ -47,20 +47,16 @@ db.once('open', () => console.log(`Connected to ${DB} database`));
 //     });
 // })
 
-
-
 //Schema
-const ProductSchema = new mongoose.Schema(
-    {
-        name: String,
-        description:String,
-        price:Number,
-    },
-    {collection:"Products"} //custom collection name 
-)
-
-
-let Product = db.model("Product",ProductSchema)
+// const ProductSchema = new mongoose.Schema(
+//     {
+//         name: String,
+//         description:String,
+//         price:Number,
+//     },
+//     {collection:"Products"} //custom collection name 
+// )
+// let Product = db.model("Product",ProductSchema)
 
 app.use(express.json());//unpack JSON formatted payload / send res.json(payload,(callbaback)=>{....})
 app.use(express.urlencoded({ extended: true })); //unpack urlEncoded payload 
@@ -88,62 +84,37 @@ app.get("/",(req,res)=>{
 // })
 
 
-app.post("/", async (req,res)=>{
-   console.log("POST")
-    console.log(req.body)
-    console.log(req.body.product)
-    
-    const productArr =[ 
-        {
-            id:01,
-        name: "Tier A",
-        description:"Top Donation: includes team entry,T-shirts, raffle (x2) and a servant for the day.",
-        price:800.00,
-        priceInCents:80000
-    },
-    {
-        id:02,
-        name: "Tier B",
-        description:"Standard Registration. Includes team entry & t-shirts.",
-        price:400.00,
-        priceInCents:40000
-    },
-    {
-        id:03,
-        name: "Tier C",
-        description:"Show your support by donating $100",
-        price:50.00,
-        priceInCents:5000
-    }
-    ]
-   
-    console.log(productArr)
-    let selectedProd = req.body.product // the item id no. to be compared against product array entries
+app.get("/api", async (req,res)=>{
+//    console.log("GET Req")
+//     console.log(req.body)
+//     console.log(req.body.product)
+//     console.log(productArr)
+//     let selectedProd = req.body.product // the item id no. to be compared against product array entries
     console.log("Received GET req from client api")
     
         try{
             
            //await productArr //does not evaluate next lines of function until selection returns resolved value of product doc from mongoose query
-          const matchedProd = productArr.filter((n,i)=>{ 
-            if(n.id === selectedProd){
-                return n
-            }
-           })
-          console.log("MATCH PROD")
-          console.log(matchedProd)
+        //   const matchedProd = productArr.filter((n,i)=>{ 
+        //     if(n.id === selectedProd){
+        //         return n
+        //     }
+        //    })
+        //   console.log("MATCH PROD")
+        //   console.log(matchedProd)
             const checkoutSession = await stripe.checkout.sessions.create({
                 payment_method_types:["card"],
                 mode:"payment",
-                success_url: process.env.SERVER_ADDRESS+"/success.html",
-                cancel_url: process.env.SERVER_ADDRESS+"/cancel.html",
+                success_url: process.env.SERVER_ADDRESS+"/success",
+                cancel_url: "https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform",
                 line_items:[
                 {
                     price_data:{
                         currency:"usd",
                         product_data:{
-                            name:matchedProd[0].name
+                            name:"Trivia Team Registration"
                         },
-                        unit_amount:  matchedProd[0].priceInCents  //Stripe requires prices in CENTS not dollars !IMPORTANT
+                        unit_amount:  8000  //Stripe requires prices in CENTS not dollars !IMPORTANT
                     },
                     quantity:1
                 }
@@ -155,7 +126,6 @@ app.post("/", async (req,res)=>{
         catch(err){
             console.log("ERROR:")
             console.log(err.message)
-            // console.log(err)
             res.status(500).json({error:err.message})
         }
     
@@ -168,6 +138,9 @@ app.post("/", async (req,res)=>{
     
 })
 
+app.get("/success",(req,res)=>{
+    res.sendFile(path.join(__dirname,".././client/public","success.html"))
+})
 
 app.listen(PORT,()=>{
     console.log("Server started on port " + PORT)
