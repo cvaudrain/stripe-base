@@ -105,7 +105,7 @@ app.get("/api", async (req,res)=>{
             const checkoutSession = await stripe.checkout.sessions.create({
                 payment_method_types:["card"],
                 mode:"payment",
-                success_url: process.env.SERVER_ADDRESS+"/success",
+                success_url: process.env.LIVE_SERVER_ADDRESS+"/success",
                 cancel_url: "https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform",
                 line_items:[
                 {
