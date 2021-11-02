@@ -6,12 +6,12 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.12",
+    "path": "^0.12.7",
     "stripe": "^8.186.0"
   },
   "name": "stripe-tutorial",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "scripts": {
     "start": "node server/server.js"
   },
@@ -22,7 +22,7 @@
   "author": "cv",
   "license": "ISC",
   "engines": {
-    "node":"14.17.3"
+    "node": "14.17.3"
   },
   "bugs": {
     "url": "https://github.com/cvaudrain/stripe-tutorial/issues"
