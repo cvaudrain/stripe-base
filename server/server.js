@@ -60,7 +60,12 @@ const stripe = require("stripe")(process.env.SECRET_KEY_TEST);
 
 app.use(express.json());//unpack JSON formatted payload / send res.json(payload,(callbaback)=>{....})
 app.use(express.urlencoded({ extended: true })); //unpack urlEncoded payload 
-app.use(express.static( ".././client/public")) //NO path,join() here. Only for GET req of index.html
+
+// If running node start from sub directory: server
+// app.use(express.static( ".././client/public")) //NO path,join() here. Only for GET req of index.html
+
+//if running node start from root as start ./server/server.js
+app.use(express.static(path.join( __dirname, ".././client/public"))) //NO path,join() here. Only for GET req of index.html
 
 app.get("/",(req,res)=>{
     console.log("Deliver static index.html")
