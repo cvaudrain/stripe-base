@@ -4,23 +4,13 @@
 
 // var stripe = Stripe('pk_test_51JmNBBIJ8lVHLX8JxlPxAZpxxyKHHZ8lA5LPDUzV3yZ86ArcN2dfQIncJ2RN033z0M3nI1iXmOgWj4KG2jdnzVb600WLVqSPf8');
 
-let currOption;
-function selectOption(ev){
-    console.log(ev.target.id)
-     currOption = +ev.target.id
-    
-     console.log("curr option = " + currOption)
-     console.log(currOption)
-}
+
 function onPurchase(ev){
-    ev.preventDefault()
-    let product=currOption
+    console.log("LOG")
     let payloadValue = {
-        product:product
+        product:"registration"
     }
-    console.log(ev.target.id)
-    console.log("currOption: " + currOption)
-    axios.post("/",payloadValue)
+    axios.get("/api")
     .then((res)=>{
         console.log(res.data)
         window.location = res.data.url
@@ -28,16 +18,17 @@ function onPurchase(ev){
     .catch((err)=>console.log(err))
 }
 //define selector return values
-let productArr =document.querySelectorAll(".option")
+// let productArr =document.querySelectorAll(".option")
 let submitBtn = document.querySelector("#submit-button") //if !JQuery, bind selector values to var, then set evt listeners on the varName
-console.log(productArr)
+// console.log(productArr)
 //event listeners
 
-productArr.forEach((n,i)=>{
-    console.log(n.id)
-    n.addEventListener("click",selectOption)
-})
-submitBtn.addEventListener("click",onPurchase)
+// productArr.forEach((n,i)=>{
+//     console.log(n.id)
+//     n.addEventListener("click",selectOption)
+// })
+document.querySelector(".ind").addEventListener("load",onPurchase())
+// console.log(document.querySelector(".ind"))
 
 
 

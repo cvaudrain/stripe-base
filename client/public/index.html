@@ -7,17 +7,25 @@
     <head>
         <meta charset="utf-8">
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-        <title>Stripe Practice</title>
+        <title>QVRR Trivia Registration</title>
         <meta name="description" content="Stripe Practice Project with Node. Single page, static landing page">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
         <!-- STRIPE Elements Script -->
         <script src="https://js.stripe.com/v3/"></script>
         <link rel="stylesheet"  href="/styles.css">
     </head>
-    <body>
-        <div class="center-div"><p>Product Selection.</p>
+    <body class="lato ind">
+        <div class="center-div centered margin-top">
+          
+        <img src = "rotaract.png" class="spinner"/>
+        <h1 class="magenta margin-top-plus">Loading...</h1>
+          </div>
 
-        <div className="content-card centered ">
+        <!-- <div className="content-card centered ">
         <div id="01" class="option center-div centered"><h4>Tier 1</h4></div>
         <div class="center-div centered"><h4>Description</h4></div>
     </div>
@@ -34,22 +42,25 @@
        <button id="submit-button" type="submit">Send</button>
     </form>
     <!-- Stripe Card Element -->
-    <form action="/charge" method="post" id="payment-form">
+
+    <!-- <form action="/charge" method="post" id="payment-form">
         <div class="form-row">
           <label for="card-element">
             Credit or debit card
           </label>
-          <div id="card-element">
+          <div id="card-element"> -->
+
             <!-- A Stripe Element will be inserted here. -->
-          </div>
+
+          <!-- </div> -->
       
           <!-- Used to display Element errors. -->
-          <div id="card-errors" role="alert"></div>
-        </div>
+          <!-- <div id="card-errors" role="alert"></div> -->
+        <!-- </div>
       
         <button>Submit Payment</button>
-      </form>
-</div>
+      </form> --> 
+<!-- </div> -->
         
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="index.js"> </script>
