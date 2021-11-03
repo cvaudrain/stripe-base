@@ -62,10 +62,10 @@ app.use(express.json());//unpack JSON formatted payload / send res.json(payload,
 app.use(express.urlencoded({ extended: true })); //unpack urlEncoded payload 
 
 // If running node start from sub directory: server
-// app.use(express.static( ".././client/public")) //NO path,join() here. Only for GET req of index.html
+// app.use(express.static( ".././client/public")) //NO path,join() here if launching from /server sub DIR. Only for GET req of index.html
 
 //if running node start from root as start ./server/server.js
-app.use(express.static(path.join( __dirname, ".././client/public"))) //NO path,join() here. Only for GET req of index.html
+app.use(express.static(path.join( __dirname, ".././client/public"))) //!!IMPORTANT!! path,join() here if launching from ROOT with node/nodemon ./server/server.js
 
 app.get("/",(req,res)=>{
     console.log("Deliver static index.html")
@@ -145,6 +145,9 @@ app.get("/api", async (req,res)=>{
 
 app.get("/success",(req,res)=>{
     res.sendFile(path.join(__dirname,".././client/public","success.html"))
+})
+app.get("/register",(req,res)=>{
+    res.sendFile(path.join(__dirname,".././client/public","register.html"))
 })
 
 app.listen(PORT,()=>{

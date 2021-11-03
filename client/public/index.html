@@ -7,60 +7,136 @@
     <head>
         <meta charset="utf-8">
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-        <title>QVRR Trivia Registration</title>
-        <meta name="description" content="Stripe Practice Project with Node. Single page, static landing page">
+        <!-- SEO -->
+        <title>QVR Rotaract Trivia 2021</title>
+        <meta name="description" content="Quiet Corner Rotaract Trivia Fundraiser">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-        <!-- STRIPE Elements Script -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
+<!-- Exterior Bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+ <!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/59e2720020.js" crossorigin="anonymous"></script>        
+<!-- STRIPE Elements Script -->
         <script src="https://js.stripe.com/v3/"></script>
         <link rel="stylesheet"  href="/styles.css">
     </head>
-    <body class="lato ind">
-        <div class="center-div centered margin-top">
-          
-        <img src = "rotaract.png" class="spinner"/>
-        <h1 class="magenta margin-top-plus">Loading...</h1>
-          </div>
+    <body class="lato ">
+        <header class="dark-br centered">
+            
+            <!-- <div class="logo-blend-div center-div"> -->
+            <img src="logo-flyer.jpg" alt="QVRR Trivia Logo" class="logo"/>
+            <!-- </div> -->
+            
+        </header>
 
-        <!-- <div className="content-card centered ">
-        <div id="01" class="option center-div centered"><h4>Tier 1</h4></div>
-        <div class="center-div centered"><h4>Description</h4></div>
-    </div>
-    <div className="content-card centered ">
-        <div id="02" class="option center-div centered"><h4>Tier 2</h4></div>
-        <div class="center-div centered"><h4>Description..</h4></div>
-    </div>
-    <div className="content-card centered ">
-        <div id="03" class="option center-div centered"><h4>Tier 3</h4></div>
-        <div class="center-div centered"><h4>Description...</h4></div>
-    </div>
-    <form  method="post">
-       <input type="text" name="input1" />
-       <button id="submit-button" type="submit">Send</button>
-    </form>
-    <!-- Stripe Card Element -->
+        <div id="reg-div" class=" centered register-div magenta-gradient">
+            <div class="center-div">
+               
+                <div class="content-card-reg theGoodShading centered brick-br">
+                    <p class="londrina reg-header black">Quinebaug Valley Regional Rotaract Club <br/> Invites You to <span class="magenta"> Join Us</span></span> for a Night of...</p>
+                   <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 white">
+                        <i class="far fa-5x fa-question-circle green"></i><p class="dancing-script md-text">Trivia </p>
+                    </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 white">
+                        <i class="fas fa-5x fa-user-astronaut light-blue"></i><p class="dancing-script md-text">Costume Contest</p>
+                    </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 white">
+                            <i class="fas fa-5x fa-ticket-alt orange"></i><p class="dancing-script md-text">Raffles</p>
+                        </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 white">
+                        <i class="fas fa-5x fa-gifts magenta"></i><p class="dancing-script md-text">Prizes</p>
+                        </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 black white">
+                                <p class="dancing-script question-header pad-b light-blue">...and more!</p>
+                              
+                              </div>
+                              </div>
+                        <div class="row">
+                            
+                          <div class="center-div black pad-b">
+                              <p class="londrina question-header pad-b white">Sign Up Today:</p>
+                              <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform">
+                              <!-- <a href="/register.html"> -->
+                                <button id="reg-btn" class="to-register-btn">Register</button>
+                            </a>
+                            </div>
+                            </div>
+                    <!-- <img src="flyer-info-sm.png" class="flyer-info" alt="Trivia Night Info"/> -->
+            
+        </div>
+        
+        </div>
+        </div>
+        <!-- Question 2 -->
+        <div id="who" class="question-div dark-br centered">
+<p class="londrina question-header white">Who?</p>
+<div class="content-card theGoodShading">
+    <p class="londrina answer-header magenta">You, Your Team, & The QVR Rotaract Club</p>
+    <p class=" lato info-text black">You and up to <span class="magenta">7 friends</span> will test your trivia knowledge and compete for prizes. Bring your A-game for a friendly competition among the trivia buffs of the Quiet Corner! </p>
+</div>
+<!-- <img src="line-prp.png"> -->
+        </div>
+        <!-- Question 3 -->
+        <div id="who" class="question-div fire-br centered">
+            <p class="londrina question-header black">Where?</p>
+            <div class="content-card-dark theGoodShading">
+                <p class="londrina answer-header white">The Putnam Elk's Lodge</p>
+                <p class=" lato info-text white">Located at 64 Edmond St. Putnam, CT, the <a href="https://www.elks.org/lodges/home.cfm?LodgeNumber=574" class="magenta">Putnam Elk's Lodge</a> is a community-favorite venue that we're thrilled to partner with for this event! </p>
+                <div class="center-div centered">
+                    <iframe class="rounded theGoodShading iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.121256920328!2d-71.89743228429086!3d41.911751979219545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e42650fb70ffe1%3A0xa962876b7fdf0820!2s64%20Edmond%20St%2C%20Putnam%2C%20CT%2006260!5e0!3m2!1sen!2sus!4v1635885236823!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" alt="Elk's Lodge Google Maps"></iframe>
+                </div>
+            </div>
+            <!-- <img src="line-prp.png"> -->
+                    </div>
+                    <div id="why" class="question-div dark-br centered">
+                        <p class="londrina question-header white">Why?</p>
+                        <div class="content-card theGoodShading">
+                            <p class="londrina answer-header black">For Young Scholars in The Quiet Corner!</p>
+                            <p class=" lato info-text black">Each year, our Trivia Tournament proceeds go <span class="magenta bold">directly towards funding scholarships</span> for deserving,
+                                 distinguished, college-bound students who embody the spirit of service in our community. </p> <div ><p class="lato info-text black border-none"><strong >Your participation</strong> allows us to offer these scholarships and invest in the future generation of community leaders!</p></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <img src="scholar-1.jpg" class="scholar-img theGoodShading" >
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <img src="scholar-2.jpg" class="scholar-img theGoodShading">
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- <img src="line-prp.png"> -->
+                                </div>
+                                
+                                <div class="center-div centered black pad-b fire-br">
+                                    <p class="londrina question-header pad-b white text-shadow">Are You In?</p>
+                                    <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform">
+                                    <!-- <a href="/register.html"> -->
+                                      <button id="reg-btn" class="to-register-btn ocean-gradient "><span class="text-shadow">Sign Me Up!</span></button>
+                                  </a>
+                                  </div>
+                    <footer class="centered">
+                        <img src="rotaract-white.png" class="footer-logo"/>
+                        <div class="footer-text">
+                            <p>Quinebaug Valley Regional Rotaract Club</p>
+                            <p>2021</p>
+                        </div>
+                        
+                       
+                        
+                    </footer>
 
-    <!-- <form action="/charge" method="post" id="payment-form">
-        <div class="form-row">
-          <label for="card-element">
-            Credit or debit card
-          </label>
-          <div id="card-element"> -->
-
-            <!-- A Stripe Element will be inserted here. -->
-
-          <!-- </div> -->
-      
-          <!-- Used to display Element errors. -->
-          <!-- <div id="card-errors" role="alert"></div> -->
-        <!-- </div>
-      
-        <button>Submit Payment</button>
-      </form> --> 
-<!-- </div> -->
+       
         
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="index.js"> </script>

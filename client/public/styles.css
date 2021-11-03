@@ -1,6 +1,246 @@
 body{
     background: rgb(254, 255, 255);
 }
+header{
+  height:24vh;
+}
+footer{
+  padding:50px auto 20px auto;
+  background:rgb(19, 19, 19);
+  overflow:hidden;
+  color:rgb(218, 218, 218);
+  /* padding:12px; */
+ 
+}
+
+.footer-logo{
+  width:25vw;
+  min-width:200px;
+
+}
+.footer-text{
+  width:25vw;
+  min-width:200px;
+  margin:auto;
+  padding:5px;
+  position: relative;
+  top:10%;;
+}
+/* Sections */
+.register-div{
+  padding-top: 8vh;;
+}
+
+.question-div{
+padding:auto;
+padding-bottom: 25px;
+}
+.question-header{
+  position:relative;
+  margin:auto auto;
+  font-size:5rem;
+  top:15%;
+}
+.answer-header{
+  position:relative;
+  margin:auto auto;
+  font-size:2.2rem;
+  /* top:15%; */
+}
+.info-text{
+  position:relative;
+  margin:auto auto;
+  font-size:1.4rem;
+  font-weight:500;
+  border-top: 1px solid rgb(187, 187, 187);
+  padding-top:15px;
+  /* top:15%; */
+}
+.border-top{
+  border-top: 2px solid rgb(121, 120, 120);
+}
+.border-none{
+  border:none;
+}
+
+.reg-header{
+  position:relative;
+  margin:auto auto;
+  padding:30px;
+  top:15%;
+  font-size: 3.7rem;
+  background: rgb(255, 255, 255);
+}
+@media(max-width:400px){
+  .reg-header{
+    font-size:3rem;
+    padding:12px;
+  }
+}
+
+/* CARDS */
+.content-card{
+  background: #fff;
+ 
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  /* padding: 10px; */
+  width: 60vw;
+  min-width: 300px;
+  margin:30px auto;
+
+  text-align: center;
+  /* margin-top: 30px; */
+  overflow: hidden;
+  padding: 20px;
+  text-shadow: 1px 2px 3px rgb(15, 15, 15);
+}
+.content-card-dark{
+  background: rgb(34, 34, 34);
+ 
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  width: 60vw;
+  min-width: 300px;
+  margin:30px auto 20px auto;
+  text-align: center;
+  margin-top: 30px;
+  overflow: hidden;
+  padding: 20px;
+  text-shadow: 1px 2px 3px rgb(39, 39, 39);
+}
+
+.iframe{
+  max-width:96%;
+}
+.rounded{
+  border-radius:7px;
+}
+/* QVRR Specific */
+/* .logo-blend-div{
+  background:rgba(0, 0, 0, 0.178);
+  padding:0 20px;
+height:100%;
+width:50%;
+} */
+.logo{
+  /* border-radius:7px; */
+  height:100%;
+  width:70vw;
+  max-width:100vw;
+  opacity:100%;
+  background:rgba(5, 5, 5, 0.712);
+  padding:0 15px;
+}
+@media(max-width:400px){
+  .logo{
+    width:100vw;
+  }
+}
+.content-card-reg{
+  background: rgb(255, 227, 227);
+ 
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  width:80vw;
+  max-width:98vw;
+  margin:30px auto;
+
+  text-align: center;
+  /* margin-top: 30px; */
+  overflow: hidden;
+  /* padding: 20px; */
+  text-shadow: 1px 2px 3px rgb(39, 39, 39);
+}
+@media(max-width:400px){
+  .content-card-reg{
+    width:90vw;
+  }
+ 
+}
+.flyer-info{
+  /* max-width:100%; */
+  padding:1px;
+  border-radius:7px;
+min-height:45vh;
+width:80vw;
+max-width:100%;
+}
+.scholar-img{
+  border-radius: 7px;
+  height:90%;
+  width:90%;
+  margin:auto;
+}
+.card {
+  border-radius: 5000px;
+  /* -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08); */
+  /* box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08); */
+  /* border: 1px solid white; */
+  width:275px;;
+  /* height: 100px; */
+  min-width: 180px;
+  margin:auto;
+  /* background: #fff; */
+  padding:25px
+}
+/* BUTTONS */
+.to-register-btn{
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 3.5rem;;
+  top: 50%;
+  /* height: 70px; */
+  width:250px;
+  min-width: 180px;
+  
+  border-radius: 10000px;
+  margin: auto;
+  padding: 6px;
+  /* margin-bottom:20px; */
+  cursor: pointer;
+  border:none;
+  box-shadow: 5px 5px 20px black;
+  text-shadow: 0 1px 1px black;
+  color: #fff;
+  background: rgb(177, 36, 106);
+background: linear-gradient(355deg, rgb(177, 36, 90) 10%, rgb(201, 59, 95) 32%, rgb(238, 96, 96) 66%);
+}
+.to-register-btn:hover{
+  color:rgb(250, 115, 227);
+  background: rgb(130,118,233);
+  background: linear-gradient(150deg, rgba(130,118,233,1) 1%, rgba(62,70,198,1) 35%, rgba(76,131,237,1) 98%);
+
+}
+/* BACKGROUNDS */
+.white-br{
+  background:#fff
+}
+.dark-br{
+  background:rgb(0, 0, 0);
+  background:url("qvr-rain-br.png");
+  background-attachment: fixed;
+}
+.black-br{
+  background:black;
+}
+.brick-br{
+    background:url("brick-br.png");
+ 
+}
+.fire-br{
+  background: rgb(177, 36, 106);
+background: linear-gradient(355deg, rgb(177, 36, 90) 10%, rgb(201, 59, 95) 32%, rgb(238, 96, 96) 66%);
+}
+.magenta-gradient{
+  background: rgb(255,136,159);
+background: linear-gradient(149deg, rgba(255,136,159,1) 1%, rgba(255,107,135,1) 35%, rgba(255,84,130,1) 98%);
+}
+.ocean-gradient{
+  background: rgb(130,118,233);
+background: linear-gradient(150deg, rgba(130,118,233,1) 1%, rgba(62,70,198,1) 35%, rgba(76,131,237,1) 98%);
+}
+
 .rotaract-br{
   background:url("br-desktop-1.png");
   background-repeat: no-repeat;
@@ -15,7 +255,7 @@ body{
 }
 .center-div{
     position:relative;
-    margin: 25px auto;
+    margin: auto auto;
     padding:5px;
 }
 .centered{
@@ -27,41 +267,38 @@ body{
 .margin-top-plus{
   margin-top: 35vh;;
 }
-.content-card{
-    background: #fff;
-   
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    /* padding: 10px; */
-    width: 25vw;
-    max-width: 450px;
-    margin:30px auto 20px auto;
-    text-align: center;
-    margin-top: 30px;
-    overflow: hidden;
-  }
+.pad-b{
+  padding-bottom:40px;
+}
+.full-width{
+  width:100%;
+  display:block;
+}
 
-  .card {
-    border-radius: 5px;
-    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-    border: 1px solid white;
-    margin: 20vh auto;
-    width:70vw;
-    background: #fff;
-    padding:25px
-  }
+  
   .theGoodShading{
     box-shadow: 1px 5px 12px black;
     text-shadow: 0 1px 1px black;
+  }
+  .text-shadow{
+     text-shadow: 1px 2px 3px black;
   }
   .selected{
       color:crimson;
   }
   .magenta{
-    color:rgb(165, 48, 103);
+    color:rgb(209, 80, 140);
     /* text-shadow: 1px 2px 3px black; */
-    text-shadow: 1px 2px 3px rgb(39, 39, 39);
+    /* text-shadow: 1px 1px 2px rgb(39, 39, 39); */
+  }
+  .light-blue{
+    color:rgb(127, 225, 255)
+  }
+  .green{
+    color:rgb(7, 161, 102)
+  }
+  .orange{
+    color:rgb(255, 168, 28)
   }
   .dark-gray{
     color: rgb(51, 51, 51);
@@ -70,6 +307,9 @@ body{
     color:black;
     font-style: bold;
     
+  }
+  .white{
+    color:white;
   }
   .header{
     font-size: 2.1rem;
@@ -107,4 +347,32 @@ body{
           transform:rotate(360deg); 
       } 
   
+  }
+
+  /* Typography */
+  .dancing-script{
+    font-family: 'Dancing Script', cursive;
+  }
+ 
+  .londrina{
+    font-family: 'Londrina Solid', cursive;
+  }
+
+  .bold{
+    font-weight: 700;
+  }
+  .light{
+    font-weight:lighter
+  }
+  .md-text{
+    font-size:2.5rem;
+    padding-top:20px;
+  }
+  .fas{
+    float:left;
+    padding:25px;
+  }
+  .far{
+    float:left;
+    padding:25px;
   }
