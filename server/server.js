@@ -112,7 +112,7 @@ app.get("/api", async (req,res)=>{
                 mode:"payment",
                 success_url: process.env.SERVER_ADDRESS+"/success",
                 // cancel_url: "https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform",
-                cancel_url:path.join(__dirname,".././client/public","index.html"),
+                cancel_url:process.env.SERVER_ADDRESS+"/",//INVALID URL ERROR
                 line_items:[
                 {
                     price_data:{
@@ -148,6 +148,7 @@ app.get("/success",(req,res)=>{
     res.sendFile(path.join(__dirname,".././client/public","success.html"))
 })
 app.get("/register",(req,res)=>{
+    console.log("/register GET")
     res.sendFile(path.join(__dirname,".././client/public","register.html"))
 })
 
