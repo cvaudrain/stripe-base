@@ -13,6 +13,10 @@ footer{
  
 }
 
+.form-iframe{
+  width:100%;
+  height:100vh;;
+}
 .footer-logo{
   width:25vw;
   min-width:200px;

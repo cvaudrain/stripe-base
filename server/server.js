@@ -111,7 +111,8 @@ app.get("/api", async (req,res)=>{
                 payment_method_types:["card"],
                 mode:"payment",
                 success_url: process.env.SERVER_ADDRESS+"/success",
-                cancel_url: "https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform",
+                // cancel_url: "https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform",
+                cancel_url:path.join(__dirname,".././client/public","index.html"),
                 line_items:[
                 {
                     price_data:{
