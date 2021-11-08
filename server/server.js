@@ -11,7 +11,8 @@ const e = require("express")
 app.use(cors())
 //Stripe 
 // Remember to switch to your live secret key in production. !IMPORTANT
-const stripe = require("stripe")(process.env.SECRET_KEY_TEST);
+const stripe = require("stripe")(process.env.QVRR_SK_TEST);
+
 // console.log("API KEY:")
 // console.log(process.env.SECRET_KEY_TEST)
 //Middleware API Calls
@@ -136,12 +137,9 @@ app.get("/api", async (req,res)=>{
         }
     
    
-    
 // })
 // .catch((err)=>console.log(err))    
-        
-    
-    
+          
 })
 
 app.get("/success",(req,res)=>{
