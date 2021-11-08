@@ -197,6 +197,19 @@ max-width:100%;
   /* background: #fff; */
   padding:25px
 }
+.card-success {
+  border-radius: 7px;
+  /* -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08); */
+  /* box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08); */
+  /* border: 1px solid white; */
+  width:275px;;
+  /* height: 100px; */
+  min-width: 180px;
+  width:70vw;
+  margin:auto;
+  background: #fff;
+  padding:25px
+}
 /* BUTTONS */
 .to-register-btn{
   font-family: 'Dancing Script', cursive;
@@ -220,6 +233,33 @@ max-width:100%;
 background: linear-gradient(355deg, rgb(177, 36, 90) 10%, rgb(201, 59, 95) 32%, rgb(238, 96, 96) 66%);
 }
 .to-register-btn:hover{
+  color:rgb(250, 115, 227);
+  background: rgb(130,118,233);
+  background: linear-gradient(150deg, rgba(130,118,233,1) 1%, rgba(62,70,198,1) 35%, rgba(76,131,237,1) 98%);
+
+}
+.to-register-btn-sm{
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 3.5rem;;
+  top: 50%;
+  /* height: 70px; */
+  width:125px;
+  min-width: 90px;
+  
+  border-radius: 10000px;
+  margin: auto;
+  padding: 3px;
+  /* margin-bottom:20px; */
+  cursor: pointer;
+  border:none;
+  box-shadow: 5px 5px 20px black;
+  text-shadow: 0 1px 1px black;
+  color: #fff;
+  background: rgb(177, 36, 106);
+background: linear-gradient(355deg, rgb(177, 36, 90) 10%, rgb(201, 59, 95) 32%, rgb(238, 96, 96) 66%);
+}
+.to-register-btn-sm:hover{
   color:rgb(250, 115, 227);
   background: rgb(130,118,233);
   background: linear-gradient(150deg, rgba(130,118,233,1) 1%, rgba(62,70,198,1) 35%, rgba(76,131,237,1) 98%);
