@@ -11,7 +11,7 @@ const e = require("express")
 app.use(cors())
 //Stripe 
 // Remember to switch to your live secret key in production. !IMPORTANT
-const stripe = require("stripe")(process.env.QVRR_SK_TEST);
+const stripe = require("stripe")(process.env.QVRR_SK_LIVE);
 
 
 // console.log("API KEY:")
