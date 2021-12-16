@@ -328,6 +328,10 @@ background: linear-gradient(150deg, rgba(130,118,233,1) 1%, rgba(62,70,198,1) 35
   display:block;
 }
 
+.headerShading{
+  box-shadow: 1px 5px 16px black;
+  text-shadow: 0 1px 1px black;
+}
   
   .theGoodShading{
     box-shadow: 1px 5px 12px black;

@@ -11,8 +11,8 @@ const e = require("express")
 app.use(cors())
 //Stripe 
 // Remember to switch to your live secret key in production. !IMPORTANT
-const stripe = require("stripe")(process.env.QVRR_SK_LIVE);
-
+// const stripe = require("stripe")(process.env.QVRR_SK_LIVE);
+const stripe = require("stripe")(process.env.SECRET_KEY_TEST);
 
 // console.log("API KEY:")
 // console.log(process.env.SECRET_KEY_TEST)
@@ -112,7 +112,8 @@ app.get("/api", async (req,res)=>{
             const checkoutSession = await stripe.checkout.sessions.create({
                 payment_method_types:["card"],
                 mode:"payment",
-                success_url: process.env.SERVER_ADDRESS+"/success",
+                
+                success_url: process.env.SERVER_ADDRESS+"/success", //for PRODUCTION BUILD
                 // cancel_url: "https://docs.google.com/forms/d/e/1FAIpQLSerhoPRuEFlo5XGAcH8hmnk4EkBJJ0fw15Hv8cM3DPs3zdx9A/viewform",
                 cancel_url:process.env.SERVER_ADDRESS+"/",//INVALID URL ERROR
                 line_items:[

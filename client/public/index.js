@@ -20,8 +20,9 @@ function onPurchase(ev){
 
 let submitBtn = document.querySelector("#submit-button") //if !JQuery, bind selector values to var, then set evt listeners on the varName
 
-document.querySelector(".reg").addEventListener("load",onPurchase()) //calls stripe session init
+// document.querySelector(".reg").addEventListener("load",onPurchase()) //calls stripe session init
 
+$(".to-register-btn").click(onPurchase) //calls stripe session init
 
 
     
